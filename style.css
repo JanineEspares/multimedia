@@ -332,8 +332,11 @@ body {
 
 .orbital-system {
     position: relative;
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .orbit {
@@ -349,16 +352,16 @@ body {
 }
 
 .orbit-1 {
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border-color: rgba(0, 255, 153, 0.3);
     animation-duration: 8s;
     animation: rotate 8s linear infinite, orbitGlow 4s ease-in-out infinite;
 }
 
 .orbit-2 {
-    width: 200px;
-    height: 200px;
+    width: 240px;
+    height: 240px;
     border-color: rgba(217, 70, 239, 0.3);
     animation-duration: 12s;
     animation-direction: reverse;
@@ -366,8 +369,8 @@ body {
 }
 
 .orbit-3 {
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     border-color: rgba(255, 0, 255, 0.3);
     animation-duration: 6s;
     animation: rotate 6s linear infinite, orbitGlow 3s ease-in-out infinite;
@@ -509,6 +512,41 @@ body {
     }
     100% {
         transform: translate(0px, -150px) rotate(360deg);
+    }
+}
+
+/* Avatar Wink Animation */
+@keyframes avatarWink {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    20% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    25% {
+        transform: translate(-50%, -50%) scaleY(0.3);
+    }
+    30% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Icon Wink Animation */
+@keyframes iconWink {
+    0%, 100% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.3;
+    }
+    30% {
+        opacity: 1;
     }
 }
 
@@ -1898,6 +1936,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: avatarWink 4s ease-in-out infinite;
 }
 
 /* Orbital Shapes Container */
@@ -1929,6 +1968,7 @@ body {
 
 .orbit-shape i {
     color: #00ff99;
+    animation: iconWink 4s ease-in-out infinite;
 }
 
 .shape-1 {
@@ -3541,30 +3581,31 @@ body {
     }
 
     .orbital-system {
-        width: 200px;
-        height: 200px;
+        width: 350px;
+        height: 350px;
     }
 
     .orbit-1 {
-        width: 100px;
-        height: 100px;
+        width: 280px;
+        height: 280px;
     }
 
     .orbit-2 {
-        width: 140px;
-        height: 140px;
+        width: 180px;
+        height: 180px;
     }
 
     .orbit-3 {
-        width: 180px;
-        height: 180px;
+        width: 90px;
+        height: 90px;
     }
 
     .center-orb {
         width: 12px;
         height: 12px;
-        top: 94px;
-        left: 94px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
 
     /* Featured Projects - Tablet */
