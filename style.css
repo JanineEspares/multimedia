@@ -439,6 +439,79 @@ body {
     }
 }
 
+/* Orbiting Shapes Animation */
+@keyframes orbitShape1 {
+    0% {
+        transform: translate(150px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(0px, 150px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-150px, 0px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0px, -150px) rotate(270deg);
+    }
+    100% {
+        transform: translate(150px, 0px) rotate(360deg);
+    }
+}
+
+@keyframes orbitShape2 {
+    0% {
+        transform: translate(0px, 150px) rotate(0deg);
+    }
+    25% {
+        transform: translate(-150px, 0px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0px, -150px) rotate(180deg);
+    }
+    75% {
+        transform: translate(150px, 0px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0px, 150px) rotate(360deg);
+    }
+}
+
+@keyframes orbitShape3 {
+    0% {
+        transform: translate(-150px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(0px, -150px) rotate(90deg);
+    }
+    50% {
+        transform: translate(150px, 0px) rotate(180deg);
+    }
+    75% {
+        transform: translate(0px, 150px) rotate(270deg);
+    }
+    100% {
+        transform: translate(-150px, 0px) rotate(360deg);
+    }
+}
+
+@keyframes orbitShape4 {
+    0% {
+        transform: translate(0px, -150px) rotate(0deg);
+    }
+    25% {
+        transform: translate(150px, 0px) rotate(90deg);
+    }
+    50% {
+        transform: translate(0px, 150px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-150px, 0px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0px, -150px) rotate(360deg);
+    }
+}
+
 @keyframes pulse {
     0%, 100% {
         box-shadow: 0 0 40px rgba(0, 255, 153, 0.6), 0 0 80px rgba(217, 70, 239, 0.3);
@@ -1764,6 +1837,9 @@ body {
 .avatar-frame {
     position: relative;
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .avatar-bg {
@@ -1819,6 +1895,64 @@ body {
     border: 2px solid rgba(0, 255, 153, 0.4);
     box-shadow: 0 0 30px rgba(0, 255, 153, 0.2),
                 inset 0 0 30px rgba(217, 70, 239, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Orbital Shapes Container */
+.orbital-shapes {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.orbit-shape {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1.5px solid rgba(0, 255, 153, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 153, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.orbit-shape i {
+    color: #00ff99;
+}
+
+.shape-1 {
+    animation: orbitShape1 8s linear infinite;
+}
+
+.shape-2 {
+    animation: orbitShape2 10s linear infinite;
+}
+
+.shape-3 {
+    animation: orbitShape3 12s linear infinite;
+}
+
+.shape-4 {
+    animation: orbitShape4 9s linear infinite;
+}
+
+.orbit-shape:hover {
+    border-color: rgba(0, 255, 153, 0.7);
+    background: var(--glass-bg);
+    box-shadow: 0 0 25px rgba(0, 255, 153, 0.5),
+                0 0 15px rgba(217, 70, 239, 0.3);
+    transform: scale(1.15);
 }
 
 .profile-accent {
