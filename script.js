@@ -4,13 +4,192 @@
  */
 
 // ===========================
-// ANIMATED TECH CURSOR
+// SLIME MUDGE EFFECT (Desktop Only)
 // ===========================
 
 /**
- * Animated Tech Cursor - Rotating Rings
+ * Interactive Slime Mudge Effect Following Mouse (Desktop Only)
  */
 document.addEventListener('DOMContentLoaded', function() {
+    // Detect if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                     || window.innerWidth < 768
+                     || ('ontouchstart' in window);
+    
+    // Only run slime effect on desktop
+    if (isMobile) {
+        return; // Skip effect on mobile
+    }
+    
+    const canvas = document.createElement('canvas');
+    canvas.id = 'slime-canvas';
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    document.body.insertBefore(canvas, document.body.firstChild);
+    
+    const ctx = canvas.getContext('2d');
+    
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let isInHero = false;
+    
+    // Particle system for slime effect
+    const particles = [];
+    
+    class SlimeParticle {
+        constructor(x, y) {
+            this.x = x + (Math.random() - 0.5) * 60;
+            this.y = y + (Math.random() - 0.5) * 60;
+            this.vx = (Math.random() - 0.5) * 4;
+            this.vy = (Math.random() - 0.5) * 4;
+            this.radius = Math.random() * 40 + 20;
+            this.alpha = Math.random() * 0.6 + 0.2;
+            this.life = 1;
+            this.decay = Math.random() * 0.005 + 0.008;
+        }
+        
+        update() {
+            // Move towards mouse
+            const dx = mouseX - this.x;
+            const dy = mouseY - this.y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+            
+            if (distance > 10) {
+                this.vx += (dx / distance) * 0.3;
+                this.vy += (dy / distance) * 0.3;
+            }
+            
+            // Friction
+            this.vx *= 0.95;
+            this.vy *= 0.95;
+            
+            this.x += this.vx;
+            this.y += this.vy;
+            
+            // Fade out
+            this.life -= this.decay;
+            this.alpha -= this.decay;
+        }
+        
+        draw() {
+            ctx.save();
+            ctx.globalAlpha = this.alpha * this.life;
+            
+            // Glowing mudge effect
+            const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+            gradient.addColorStop(0, 'rgba(0, 255, 153, 0.8)');
+            gradient.addColorStop(0.4, 'rgba(217, 70, 239, 0.4)');
+            gradient.addColorStop(1, 'rgba(255, 0, 255, 0)');
+            
+            ctx.fillStyle = gradient;
+            ctx.fillRect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+            
+            // Optional: Add glow effect
+            ctx.shadowBlur = 20;
+            ctx.shadowColor = `rgba(0, 255, 153, ${0.5 * this.life})`;
+            
+            ctx.restore();
+        }
+    }
+    
+    // Track mouse movement
+    document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Check if mouse is in hero section
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            const rect = heroSection.getBoundingClientRect();
+            isInHero = mouseY >= rect.top && mouseY <= rect.bottom;
+        }
+        
+        // Create slime particles when moving
+        if (isInHero && Math.random() > 0.5) {
+            particles.push(new SlimeParticle(mouseX, mouseY));
+        }
+    });
+    
+    // Animation loop
+    function animate() {
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Update and draw particles
+        for (let i = particles.length - 1; i >= 0; i--) {
+            particles[i].update();
+            particles[i].draw();
+            
+            if (particles[i].life <= 0) {
+                particles.splice(i, 1);
+            }
+        }
+        
+        // Draw glowing cursor mudge effect directly on mouse position
+        if (isInHero) {
+            ctx.save();
+            
+            // Large outer glow
+            const outerGradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 150);
+            outerGradient.addColorStop(0, 'rgba(0, 255, 153, 0.15)');
+            outerGradient.addColorStop(0.5, 'rgba(217, 70, 239, 0.05)');
+            outerGradient.addColorStop(1, 'rgba(255, 0, 255, 0)');
+            
+            ctx.fillStyle = outerGradient;
+            ctx.fillRect(mouseX - 150, mouseY - 150, 300, 300);
+            
+            // Medium glow
+            const mediumGradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 100);
+            mediumGradient.addColorStop(0, 'rgba(0, 255, 153, 0.25)');
+            mediumGradient.addColorStop(0.6, 'rgba(217, 70, 239, 0.1)');
+            mediumGradient.addColorStop(1, 'rgba(255, 0, 255, 0)');
+            
+            ctx.fillStyle = mediumGradient;
+            ctx.fillRect(mouseX - 100, mouseY - 100, 200, 200);
+            
+            // Sharp inner glow
+            const innerGradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 50);
+            innerGradient.addColorStop(0, 'rgba(0, 255, 153, 0.4)');
+            innerGradient.addColorStop(0.7, 'rgba(217, 70, 239, 0.15)');
+            innerGradient.addColorStop(1, 'rgba(255, 0, 255, 0)');
+            
+            ctx.fillStyle = innerGradient;
+            ctx.fillRect(mouseX - 50, mouseY - 50, 100, 100);
+            
+            ctx.restore();
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    // Start animation
+    animate();
+    
+    // Handle window resize
+    window.addEventListener('resize', () => {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    });
+});
+
+// ===========================
+// ANIMATED TECH CURSOR (Desktop Only)
+// ===========================
+
+/**
+ * Animated Tech Cursor - Rotating Rings (Desktop Only)
+ */
+document.addEventListener('DOMContentLoaded', function() {
+    // Detect if device is mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
+                     || window.innerWidth < 768
+                     || ('ontouchstart' in window);
+    
+    // Only run custom cursor on desktop
+    if (isMobile) {
+        return; // Skip cursor on mobile, use default
+    }
+    
     const cursorContainer = document.createElement('div');
     const cursorRing1 = document.createElement('div');
     const cursorRing2 = document.createElement('div');
