@@ -25,9 +25,32 @@
     </nav>
 
     <!-- Portfolio Header Section -->
-    <header class="page-header">
+    <header class="page-header portfolio-header">
+        <!-- Animated Background Elements -->
+        <div class="header-bg-elements">
+            <div class="floating-orb orb-1"></div>
+            <div class="floating-orb orb-2"></div>
+            <div class="floating-orb orb-3"></div>
+            <div class="floating-shape shape-1"></div>
+            <div class="floating-shape shape-2"></div>
+        </div>
+        
         <div class="page-header-content">
-            <h1 class="page-title fade-in">Portfolio</h1>
+            <h1 class="page-title animated-title">
+                <span class="title-char">P</span>
+                <span class="title-char">o</span>
+                <span class="title-char">r</span>
+                <span class="title-char">t</span>
+                <span class="title-char">f</span>
+                <span class="title-char">o</span>
+                <span class="title-char">l</span>
+                <span class="title-char">i</span>
+                <span class="title-char">o</span>
+            </h1>
+            
+            <!-- Collision Light Effect -->
+            <div class="collision-burst"></div>
+            
             <p class="page-subtitle fade-in-delay">
                 Explore my featured works in rotoscoping and 3D rendering
             </p>
@@ -39,7 +62,7 @@
         <div class="container">
             <div class="projects-showcase">
                 <!-- Project 1: 3D Solar System -->
-                <div class="project-showcase-item left">
+                <a href="portfolio/solar-system.html" class="project-showcase-item left project-link">
                     <div class="showcase-image">
                         <img src="images/solar-system.jpg" alt="3D Solar System" class="project-image-featured">
                         <div class="image-overlay"></div>
@@ -49,7 +72,7 @@
                         <h3 class="showcase-title">3D Solar System</h3>
                         <p class="showcase-category">3D RENDERING</p>
                         <p class="showcase-description">
-                            Interactive 3D visualization with realistic planetary models and orbital mechanics. Showcasing advanced rendering techniques with dynamic lighting and textures.
+                            A 3D solar system created with Blender, featuring detailed planetary models and realistic orbital mechanics. Built using advanced 3D modeling techniques and enhanced with Python scripting for dynamic interactions and precision calculations.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-badge">Blender</span>
@@ -57,16 +80,16 @@
                             <span class="tech-badge">Python</span>
                         </div>
                     </div>
-                </div>
+                </a>
 
                 <!-- Project 2: Video Rotoscope -->
-                <div class="project-showcase-item right">
+                <a href="portfolio/rotoscope.html" class="project-showcase-item right project-link">
                     <div class="showcase-content">
                         <div class="project-number">02</div>
                         <h3 class="showcase-title">1-Minute Video Rotoscope</h3>
                         <p class="showcase-category">ROTOSCOPING</p>
                         <p class="showcase-description">
-                            Frame-by-frame hand-traced animation demonstrating meticulous attention to detail. Perfect for visual effects, motion tracking, and stylized animation projects.
+                            A 1-minute rotoscoped video created using CapCut, Adobe After Effects, and Adobe Premiere Pro. This project showcases frame-by-frame precision work with meticulous attention to detail, demonstrating professional VFX compositing and motion tracking techniques.
                         </p>
                         <div class="tech-stack">
                             <span class="tech-badge">CapCut</span>
@@ -78,7 +101,7 @@
                         <img src="images/rotoscope.png" alt="1-Minute Video Rotoscope" class="project-image-featured">
                         <div class="image-overlay"></div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -107,7 +130,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Multimedia & Authoring. All rights reserved.</p>
+            <p>&copy; 2025 Janine E. Espares | BSIT-NS-T-2A. All rights reserved.</p>
         </div>
     </footer>
 
