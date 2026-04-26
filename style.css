@@ -2177,16 +2177,16 @@ body {
 }
 
 .social-icon {
-    width: 60px;
-    height: 60px;
+    width: 16px;
+    height: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--border-color);
+    border: 1px solid var(--border-color);
     border-radius: 50%;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 0.5rem;
     transition: var(--transition);
 }
 
@@ -2245,7 +2245,7 @@ body {
 }
 
 .contact-title {
-    font-size: 3.2rem;
+    font-size: 1.8rem;
     margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #00ff99, #d946ef, #ff00ff);
     -webkit-background-clip: text;
