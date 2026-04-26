@@ -180,9 +180,6 @@ document.addEventListener('DOMContentLoaded', function() {
  * Animated Tech Cursor - Rotating Rings (Desktop Only)
  */
 document.addEventListener('DOMContentLoaded', function() {
-    // DISABLED: Custom cursor causing visibility issues
-    return;
-    
     // Detect if device is mobile
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
                      || window.innerWidth < 768
