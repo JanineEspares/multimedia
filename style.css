@@ -2648,6 +2648,21 @@ body {
     height: 100%;
 }
 
+.tutorial-image-embed {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.tutorial-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
 .step-number {
     font-size: 3rem;
     font-weight: 900;
