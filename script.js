@@ -177,11 +177,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===========================
 
 /**
- * Animated Tech Cursor - Rotating Rings (Desktop Only)
+ * Animated Tech Cursor - Glowing dot with minimal interference
  */
 document.addEventListener('DOMContentLoaded', function() {
     // DISABLED: Custom cursor interferes with orbital system animation
-    return;
+    // return;
     
     // Detect if device is mobile
     const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) 
@@ -193,132 +193,100 @@ document.addEventListener('DOMContentLoaded', function() {
         return; // Skip cursor on mobile, use default
     }
     
-    const cursorContainer = document.createElement('div');
-    const cursorRing1 = document.createElement('div');
-    const cursorRing2 = document.createElement('div');
-    const cursorRing3 = document.createElement('div');
-    const cursorCenter = document.createElement('div');
+    // Create neon bracket cursor
+    const cursor = document.createElement('div');
+    const leftBracket = document.createElement('span');
+    const rightBracket = document.createElement('span');
     
-    // Main container
-    cursorContainer.id = 'cursor-container';
-    cursorContainer.style.cssText = `
+    cursor.id = 'cursor-bracket';
+    leftBracket.id = 'bracket-left';
+    rightBracket.id = 'bracket-right';
+    
+    // Cursor container
+    cursor.style.cssText = `
         position: fixed;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         pointer-events: none;
         z-index: 10000;
-        transform: translate(-50%, -50%);
+        display: none;
+        font-family: 'Courier New', monospace;
+        font-size: 32px;
+        font-weight: bold;
+        color: #00ff99;
+        text-shadow: 0 0 10px #00ff99;
     `;
     
-    // Ring 1 - Outer rotating ring
-    cursorRing1.id = 'cursor-ring-1';
-    cursorRing1.style.cssText = `
+    // Left bracket [
+    leftBracket.style.cssText = `
         position: absolute;
-        width: 50px;
-        height: 50px;
-        border: 2px solid #00d9ff;
-        border-radius: 50%;
-        top: 0;
-        left: 0;
-        box-shadow: 0 0 15px #00d9ff;
-        animation: rotate 4s linear infinite;
+        left: -2px;
+        top: 0px;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
     `;
+    leftBracket.textContent = '[';
     
-    // Ring 2 - Middle rotating ring (opposite direction)
-    cursorRing2.id = 'cursor-ring-2';
-    cursorRing2.style.cssText = `
+    // Right bracket ]
+    rightBracket.style.cssText = `
         position: absolute;
-        width: 32px;
-        height: 32px;
-        border: 2px solid #ff006e;
-        border-radius: 50%;
-        top: 9px;
-        left: 9px;
-        box-shadow: 0 0 15px #ff006e;
-        animation: rotateReverse 3s linear infinite;
+        right: -2px;
+        top: 0px;
+        transition: color 0.3s ease, text-shadow 0.3s ease;
     `;
+    rightBracket.textContent = ']';
     
-    // Ring 3 - Inner rotating ring
-    cursorRing3.id = 'cursor-ring-3';
-    cursorRing3.style.cssText = `
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        border: 2px solid #8338ec;
-        border-radius: 50%;
-        top: 16px;
-        left: 16px;
-        box-shadow: 0 0 15px #8338ec;
-        animation: rotate 2.5s linear infinite;
-    `;
-    
-    // Center dot
-    cursorCenter.id = 'cursor-center';
-    cursorCenter.style.cssText = `
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background: #00d9ff;
-        border-radius: 50%;
-        top: 21px;
-        left: 21px;
-        box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff;
-        animation: pulse 1.5s ease-in-out infinite;
-    `;
-    
-    cursorContainer.appendChild(cursorRing1);
-    cursorContainer.appendChild(cursorRing2);
-    cursorContainer.appendChild(cursorRing3);
-    cursorContainer.appendChild(cursorCenter);
-    document.body.appendChild(cursorContainer);
-    
-    // Add animations
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes rotateReverse {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(-360deg); }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { 
-                transform: scale(1);
-                opacity: 1;
-                box-shadow: 0 0 20px #00d9ff, 0 0 40px #00d9ff;
-            }
-            50% { 
-                transform: scale(1.3);
-                opacity: 0.7;
-                box-shadow: 0 0 30px #00d9ff, 0 0 60px #00d9ff;
-            }
-        }
-    `;
-    document.head.appendChild(style);
+    cursor.appendChild(leftBracket);
+    cursor.appendChild(rightBracket);
+    document.body.appendChild(cursor);
     
     let mouseX = 0;
     let mouseY = 0;
     
-    // Update cursor position
+    // Position cursor at mouse location
+    const updateCursor = () => {
+        cursor.style.left = (mouseX - 20) + 'px';
+        cursor.style.top = (mouseY - 20) + 'px';
+        
+        requestAnimationFrame(updateCursor);
+    };
+    
+    updateCursor();
+    
+    // Track mouse movement
     document.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
         mouseY = e.clientY;
-        
-        cursorContainer.style.left = mouseX + 'px';
-        cursorContainer.style.top = mouseY + 'px';
+        cursor.style.display = 'block';
     });
     
-    // Hide custom cursor on mouse leave and show on mouse enter
+    // Hide cursor on mouse leave
     document.addEventListener('mouseleave', () => {
-        cursorContainer.style.opacity = '0';
+        cursor.style.display = 'none';
     });
     
     document.addEventListener('mouseenter', () => {
-        cursorContainer.style.opacity = '1';
+        cursor.style.display = 'block';
+    });
+    
+    // Change color on interactive elements
+    const interactiveElements = 'a, button, input, textarea, select, [onclick]';
+    
+    document.addEventListener('mouseover', (e) => {
+        if (e.target.closest(interactiveElements)) {
+            leftBracket.style.color = '#d946ef';
+            leftBracket.style.textShadow = '0 0 15px #d946ef';
+            rightBracket.style.color = '#d946ef';
+            rightBracket.style.textShadow = '0 0 15px #d946ef';
+        }
+    });
+    
+    document.addEventListener('mouseout', (e) => {
+        if (e.target.closest(interactiveElements)) {
+            leftBracket.style.color = '#00ff99';
+            leftBracket.style.textShadow = '0 0 10px #00ff99';
+            rightBracket.style.color = '#00ff99';
+            rightBracket.style.textShadow = '0 0 10px #00ff99';
+        }
     });
 });
 
