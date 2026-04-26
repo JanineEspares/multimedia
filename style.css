@@ -553,11 +553,11 @@ body {
 @keyframes pulse {
     0%, 100% {
         box-shadow: 0 0 40px rgba(0, 255, 153, 0.6), 0 0 80px rgba(217, 70, 239, 0.3);
-        transform: scale(1);
+        transform: translate(-50%, -50%) scale(1);
     }
     50% {
         box-shadow: 0 0 60px rgba(0, 255, 153, 0.8), 0 0 120px rgba(217, 70, 239, 0.5);
-        transform: scale(1.05);
+        transform: translate(-50%, -50%) scale(1.05);
     }
 }
 
