@@ -2177,8 +2177,8 @@ body {
 }
 
 .social-icon {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2186,7 +2186,7 @@ body {
     border-radius: 50%;
     color: var(--text-primary);
     text-decoration: none;
-    font-size: 0.5rem;
+    font-size: 0.4rem;
     transition: var(--transition);
 }
 
