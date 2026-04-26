@@ -515,6 +515,24 @@ body {
     }
 }
 
+@keyframes orbitShape5 {
+    0% {
+        transform: translate(120px, -100px) rotate(0deg);
+    }
+    25% {
+        transform: translate(120px, 100px) rotate(90deg);
+    }
+    50% {
+        transform: translate(-120px, 100px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-120px, -100px) rotate(270deg);
+    }
+    100% {
+        transform: translate(120px, -100px) rotate(360deg);
+    }
+}
+
 /* Avatar Wink Animation */
 @keyframes avatarWink {
     0% {
@@ -1990,6 +2008,10 @@ body {
     animation: orbitShape4 9s linear infinite;
 }
 
+.shape-5 {
+    animation: orbitShape5 11s linear infinite;
+}
+
 .orbit-shape:hover {
     border-color: rgba(0, 255, 153, 0.7);
     background: var(--glass-bg);
@@ -2038,6 +2060,14 @@ body {
                 inset 2px 2px 8px rgba(255, 150, 100, 0.4),
                 0 0 20px rgba(255, 100, 100, 0.6),
                 0 0 40px rgba(255, 100, 100, 0.3);
+}
+
+.saturn-shape {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 200, 120, 0.8), rgba(255, 180, 80, 0.3), rgba(200, 150, 80, 0.2));
+    box-shadow: inset -2px -2px 8px rgba(0, 0, 0, 0.3),
+                inset 2px 2px 8px rgba(255, 200, 120, 0.4),
+                0 0 20px rgba(255, 180, 100, 0.6),
+                0 0 40px rgba(255, 180, 100, 0.3);
 }
 
 @keyframes glow {
