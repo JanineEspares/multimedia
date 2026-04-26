@@ -352,16 +352,16 @@ body {
 }
 
 .orbit-1 {
-    width: 350px;
-    height: 350px;
+    width: 140px;
+    height: 140px;
     border-color: rgba(0, 255, 153, 0.3);
     animation-duration: 8s;
     animation: rotate 8s linear infinite, orbitGlow 4s ease-in-out infinite;
 }
 
 .orbit-2 {
-    width: 240px;
-    height: 240px;
+    width: 200px;
+    height: 200px;
     border-color: rgba(217, 70, 239, 0.3);
     animation-duration: 12s;
     animation-direction: reverse;
@@ -369,11 +369,53 @@ body {
 }
 
 .orbit-3 {
-    width: 130px;
-    height: 130px;
+    width: 260px;
+    height: 260px;
     border-color: rgba(255, 0, 255, 0.3);
     animation-duration: 6s;
     animation: rotate 6s linear infinite, orbitGlow 3s ease-in-out infinite;
+}
+
+.orbit-4 {
+    width: 320px;
+    height: 320px;
+    border-color: rgba(0, 255, 153, 0.2);
+    animation-duration: 10s;
+    animation: rotate 10s linear infinite, orbitGlow 5s ease-in-out infinite;
+}
+
+.orbit-5 {
+    width: 380px;
+    height: 380px;
+    border-color: rgba(217, 70, 239, 0.2);
+    animation-duration: 18s;
+    animation-direction: reverse;
+    animation: rotate 18s linear infinite reverse, orbitGlow 8s ease-in-out infinite;
+}
+
+.orbit-6 {
+    width: 440px;
+    height: 440px;
+    border-color: rgba(255, 0, 255, 0.2);
+    animation-duration: 24s;
+    animation: rotate 24s linear infinite, orbitGlow 10s ease-in-out infinite;
+}
+
+.orbit-7 {
+    width: 500px;
+    height: 500px;
+    border-color: rgba(0, 255, 153, 0.15);
+    animation-duration: 35s;
+    animation-direction: reverse;
+    animation: rotate 35s linear infinite reverse, orbitGlow 12s ease-in-out infinite;
+}
+
+.orbit-8 {
+    width: 560px;
+    height: 560px;
+    border-color: rgba(217, 70, 239, 0.15);
+    animation-duration: 44s;
+    animation: rotate 44s linear infinite, orbitGlow 14s ease-in-out infinite;
 }
 
 @keyframes rotate {
@@ -626,6 +668,154 @@ body {
     background: radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.6), transparent 60%);
     top: 0;
     left: 0;
+}
+
+/* ===========================
+   PLANETS - ORBITAL SYSTEM
+   =========================== */
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    box-shadow: 0 0 15px currentColor;
+}
+
+.planet-1 {
+    width: 12px;
+    height: 12px;
+    background: radial-gradient(circle at 35% 35%, #a0a0a0, #606060);
+    animation: orbitPlanet1 2.5s linear infinite;
+    box-shadow: 0 0 15px rgba(160, 160, 160, 0.6);
+}
+
+.planet-2 {
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #ffeb3b, #fbc02d);
+    animation: orbitPlanet2 3.4s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 200, 50, 0.6);
+}
+
+.planet-3 {
+    width: 13px;
+    height: 13px;
+    background: radial-gradient(circle at 35% 35%, #2196f3, #1565c0);
+    animation: orbitPlanet3 4s linear infinite;
+    box-shadow: 0 0 15px rgba(33, 150, 243, 0.6);
+}
+
+.planet-4 {
+    width: 11px;
+    height: 11px;
+    background: radial-gradient(circle at 35% 35%, #ff6f00, #d84315);
+    animation: orbitPlanet4 4.9s linear infinite;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.6);
+}
+
+.planet-5 {
+    width: 16px;
+    height: 16px;
+    background: radial-gradient(circle at 35% 35%, #ff9800, #e65100);
+    animation: orbitPlanet5 9.1s linear infinite;
+    box-shadow: 0 0 18px rgba(255, 152, 0, 0.6);
+}
+
+.planet-6 {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 35% 35%, #fdd835, #f9a825);
+    animation: orbitPlanet6 12.2s linear infinite;
+    box-shadow: 0 0 16px rgba(253, 216, 53, 0.6);
+}
+
+.planet-7 {
+    width: 13px;
+    height: 13px;
+    background: radial-gradient(circle at 35% 35%, #00bcd4, #0097a7);
+    animation: orbitPlanet7 17.5s linear infinite;
+    box-shadow: 0 0 15px rgba(0, 188, 212, 0.6);
+}
+
+.planet-8 {
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #1e40af, #0f3460);
+    animation: orbitPlanet8 22s linear infinite;
+    box-shadow: 0 0 16px rgba(30, 64, 175, 0.6);
+}
+
+@keyframes orbitPlanet1 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(70px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(70px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet2 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet3 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(130px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(130px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet4 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(160px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(160px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet5 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(190px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(190px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet6 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(220px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(220px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet7 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(250px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(250px) rotate(-360deg);
+    }
+}
+
+@keyframes orbitPlanet8 {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(280px) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(280px) rotate(-360deg);
+    }
 }
 
 
