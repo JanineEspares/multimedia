@@ -112,6 +112,7 @@ body {
     color: #b9a8d4;
     line-height: 1.8;
     margin-bottom: 2.5rem;
+    text-align: center;
 }
 
 .hero-cta {
@@ -667,6 +668,8 @@ body {
     line-height: 1.8;
     max-width: 500px;
     letter-spacing: 0.2px;
+    text-align: center;
+    margin: 0 auto 2.5rem;
 }
 
 .hero-cta {
@@ -3646,6 +3649,7 @@ body {
         font-size: 0.85rem;
         line-height: 1.5;
         max-width: 100%;
+        text-align: center;
     }
 
     .hero-cta {
@@ -4269,6 +4273,7 @@ body {
 
     .hero-description {
         font-size: 0.95rem;
+        text-align: center;
     }
 
     .hero-visual {
