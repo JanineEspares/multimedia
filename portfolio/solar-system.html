@@ -114,6 +114,289 @@
         </div>
     </section>
 
+    <!-- Videos Gallery Section -->
+    <section class="videos-gallery">
+        <div class="container">
+            <h2 class="section-title">Calculate Time & Motion in the Solar System</h2>
+            <p class="calculator-subtitle">Enter Earth years to see ages, revolutions, orbital periods, and distances for all planets</p>
+            
+            <div class="calculator-input">
+                <label for="earthYears">Earth Years:</label>
+                <input type="number" id="earthYears" placeholder="Enter number of years" value="1" min="0" step="0.1">
+                <button id="calculateBtn" class="calculate-btn">Calculate</button>
+            </div>
+
+            <div class="videos-grid">
+                <div class="video-card">
+                    <h3>Sun <span class="reference-badge">(Star)</span></h3>
+                    <div class="earth-placeholder sun-placeholder">
+                        <i class="fas fa-sun"></i>
+                        <p>Center of Solar System</p>
+                    </div>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value">4.6</span>
+                            <span class="data-unit">billion years</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Mercury</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/mercury.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="mercury-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="mercury-rev">4.15</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">88</span>
+                            <span class="data-unit">Earth days</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">57.9</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Venus</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/venus.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="venus-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="venus-rev">1.63</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">225</span>
+                            <span class="data-unit">Earth days</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">108.2</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Earth <span class="reference-badge">(Reference)</span></h3>
+                    <div class="earth-placeholder">
+                        <i class="fas fa-globe"></i>
+                        <p>Reference Planet</p>
+                    </div>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="earth-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="earth-rev">1.00</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">365</span>
+                            <span class="data-unit">Earth days</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">149.6</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Mars</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/mars.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="mars-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="mars-rev">0.53</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">687</span>
+                            <span class="data-unit">Earth days</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">227.9</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Jupiter</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/jupiter.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="jupiter-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="jupiter-rev">0.08</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">11.86</span>
+                            <span class="data-unit">Earth years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">778.5</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Saturn <span class="reference-badge">(No Video)</span></h3>
+                    <div class="earth-placeholder">
+                        <i class="fas fa-ring"></i>
+                        <p>Reference Data</p>
+                    </div>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="saturn-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="saturn-rev">0.03</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">29.46</span>
+                            <span class="data-unit">Earth years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">1434.0</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Uranus</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/uranus.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="uranus-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="uranus-rev">0.01</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">84.01</span>
+                            <span class="data-unit">Earth years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">2873.0</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Neptune</h3>
+                    <video width="100%" height="auto" autoplay muted loop>
+                        <source src="../videos/neptune.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="neptune-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="neptune-rev">0.01</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">164.79</span>
+                            <span class="data-unit">Earth years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">4495.1</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <h3>Pluto <span class="reference-badge">(Dwarf)</span></h3>
+                    <div class="earth-placeholder">
+                        <i class="fas fa-circle"></i>
+                        <p>Dwarf Planet</p>
+                    </div>
+                    <div class="planet-details">
+                        <div class="data-row">
+                            <span class="data-label">Age:</span>
+                            <span class="data-value" id="pluto-age">1</span>
+                            <span class="data-unit">years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Revolutions:</span>
+                            <span class="data-value" id="pluto-rev">0.00</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Orbital Period:</span>
+                            <span class="data-value">248</span>
+                            <span class="data-unit">Earth years</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">Distance from Sun:</span>
+                            <span class="data-value">5906</span>
+                            <span class="data-unit">million km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">

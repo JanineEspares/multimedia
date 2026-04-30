@@ -60,4 +60,49 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Solar System Calculator
+document.addEventListener('DOMContentLoaded', function() {
+    const earthYearsInput = document.getElementById('earthYears');
+    
+    // Planet data with precise orbital periods (in Earth years)
+    const planets = {
+        sun: { period: 1 },
+        mercury: { period: 0.2408 },
+        venus: { period: 0.6152 },
+        earth: { period: 1.0 },
+        mars: { period: 1.8809 },
+        jupiter: { period: 11.8622 },
+        saturn: { period: 29.4571 },
+        uranus: { period: 84.0111 },
+        neptune: { period: 164.7886 },
+        pluto: { period: 248.0 }
+    };
+    
+    function updateCalculator() {
+        const earthYears = parseFloat(earthYearsInput.value) || 0;
+        
+        Object.keys(planets).forEach(planet => {
+            const period = planets[planet].period;
+            const age = Math.round(earthYears);
+            const revolutions = (earthYears / period).toFixed(2);
+            
+            // Update values in DOM
+            const ageElement = document.getElementById(`${planet}-age`);
+            const revElement = document.getElementById(`${planet}-rev`);
+            
+            if (ageElement) ageElement.textContent = age;
+            if (revElement) revElement.textContent = revolutions;
+        });
+    }
+    
+    // Add event listener for calculate button only
+    const calculateBtn = document.getElementById('calculateBtn');
+    if (calculateBtn) {
+        calculateBtn.addEventListener('click', updateCalculator);
+    }
+    
+    // Initialize with default values on page load
+    updateCalculator();
+});
+
 console.log('✨ Portfolio loaded successfully!');
