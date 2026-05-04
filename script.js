@@ -3,8 +3,10 @@
  * Basic functionality: navigation highlighting, smooth scrolling, simple hover effects
  */
 
+'use strict';
+
 // Highlight active nav link based on current page
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
     
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add hover effects to project cards
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const projectCards = document.querySelectorAll('.project-showcase-item');
     
     projectCards.forEach(card => {
@@ -36,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Add hover effect to buttons
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const buttons = document.querySelectorAll('.cta-button, .view-project');
     
     buttons.forEach(button => {
