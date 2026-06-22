@@ -387,8 +387,8 @@ body {
     background-color: #00ff99;
     color: #0a0313;
     border-color: #0a0313;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 255, 153, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 255, 153, 0.4), 0 0 20px rgba(0, 255, 153, 0.2);
 }
 
 /* ===========================
@@ -2827,13 +2827,6 @@ body {
     text-decoration: none;
     font-size: 1rem;
     transition: all 0.3s ease;
-}
-
-.social-icon:hover {
-    border-color: #00ff99;
-    color: #00ff99;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 255, 153, 0.4), 0 0 20px rgba(0, 255, 153, 0.2);
 }
 
 /* ===========================
