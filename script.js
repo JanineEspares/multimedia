@@ -107,4 +107,33 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCalculator();
 });
 
+// Final Solar System Showcase Video
+document.addEventListener('DOMContentLoaded', function () {
+    const video = document.getElementById('solarSystemVideo');
+    const playButton = document.getElementById('videoPlayButton');
+
+    // Prevent errors on pages where the showcase video doesn't exist
+    if (!video || !playButton) return;
+
+    // Play video when overlay button is clicked
+    playButton.addEventListener('click', function () {
+        video.play();
+    });
+
+    // Hide button while video is playing
+    video.addEventListener('play', function () {
+        playButton.classList.add('hidden');
+    });
+
+    // Show button again when paused
+    video.addEventListener('pause', function () {
+        playButton.classList.remove('hidden');
+    });
+
+    // Show button again when video ends
+    video.addEventListener('ended', function () {
+        playButton.classList.remove('hidden');
+    });
+});
+
 console.log('✨ Portfolio loaded successfully!');

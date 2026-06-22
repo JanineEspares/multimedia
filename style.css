@@ -327,8 +327,12 @@ body {
    =========================== */
 
 .page-header {
-    padding: 3rem 0;
     text-align: center;
+    padding: 80px 20px 40px;
+    display: flex;
+    flex-direction: column; /* <-- forces vertical stacking */
+    align-items: center;
+    gap: 10px;
 }
 
 .page-title {
@@ -2316,7 +2320,7 @@ body {
 
 .showcase-image {
     position: relative;
-    height: 400px;
+    height: 210px;
     border-radius: 20px;
     overflow: hidden;
     background: linear-gradient(135deg, rgba(45, 27, 71, 0.8) 0%, rgba(26, 13, 46, 0.6) 100%);
@@ -3161,7 +3165,7 @@ body {
 
 .overview-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: 4rem;
     align-items: center;
     max-width: 1200px;
@@ -4725,5 +4729,42 @@ a:focus, button:focus {
 
     .calculator-input input {
         width: 100%;
+    }
+}
+
+/* ========================================
+   Final Project Showcase Video
+======================================== */
+
+.project-showcase {
+    margin-top: 2.5rem;
+    text-align: center;
+}
+
+.showcase-title {
+    margin-bottom: 1.25rem;
+}
+
+.showcase-video-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.showcase-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: inherit;
+}
+
+@media (max-width: 768px) {
+    .showcase-video-container {
+        max-width: 100%;
     }
 }
