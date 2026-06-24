@@ -4626,11 +4626,12 @@ a:focus, button:focus {
     box-shadow: 0 10px 40px rgba(0, 255, 153, 0.2);
 }
 
-.project-video-container video {
+.project-video-container iframe {
     width: 100%;
-    height: auto;
+    aspect-ratio: 16 / 9;
     display: block;
     background: #000;
+    border: 0;
 }
 
 .calculator-subtitle {
