@@ -6,6 +6,20 @@
     <title>3D Solar System - Project Details</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .planet-description {
+            background: rgba(20, 45, 55, 0.6);
+            border-left: 3px solid #4ecdc4;
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin: 15px 0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+        .planet-description strong {
+            color: #4ecdc4;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -48,7 +62,7 @@
                 <span class="title-char">m</span>
             </h1>
             <p class="page-subtitle fade-in-delay">
-                Advanced 3D modeling with realistic orbital mechanics and Python scripting
+                3D scene design featuring automated Python scripting and math-driven animation drivers
             </p>
         </div>
     </header>
@@ -60,20 +74,20 @@
                 <div class="overview-info">
                     <h2>Project Overview</h2>
                     <p>
-                        A comprehensive 3D solar system created using Blender's advanced modeling and rendering capabilities. This project features detailed planetary models with accurate proportions, realistic textures, and sophisticated orbital mechanics. The system is enhanced with Python scripting for dynamic interactions, precision calculations, and automated animations, demonstrating both artistic skill and technical programming knowledge.
+                        A 3D solar system environment built using Blender for asset layout, texture mapping, and rendering. This project features planetary models mapped with high-definition textures and animated using custom cyclic paths. The scene is enhanced with Python scripting to procedurally distribute a 300-piece asteroid belt and deploy frame-dependent math expressions for object rotations, demonstrating practical skills in both 3D environment design and programmatic automation.
                     </p>
                     <div class="project-stats">
                         <div class="stat">
                             <span class="stat-label">Planets</span>
-                            <span class="stat-value">8 Major</span>
+                            <span class="stat-value">8 Major + Dwarf</span>
                         </div>
                         <div class="stat">
                             <span class="stat-label">Render Time</span>
-                            <span class="stat-value">1 Hour</span>
+                            <span class="stat-value">1.27 Hours</span>
                         </div>
                         <div class="stat">
                             <span class="stat-label">Python Scripts</span>
-                            <span class="stat-value">462 Lines</span>
+                            <span class="stat-value">729 Lines</span>
                         </div>
                     </div>
 
@@ -96,7 +110,57 @@
         </div>
     </section>
 
-    <!-- Tools & Technologies Section -->
+<!-- Project Technical Details Section -->
+    <section class="project-details-spec">
+        <div class="container">
+            <h2 class="section-title">Project Specifications</h2>
+            
+            <div class="details-layout" style="margin-bottom: 40px;">
+                <!-- Development Stack -->
+                <div class="details-group">
+                    <h3>Development Stack</h3>
+                    <p style="margin-bottom: 10px;"><strong>Blender 5.1.2:</strong> 3D asset generation, environments, and physics keyframing.</p>
+                    <p style="margin-bottom: 20px;"><strong>Python API:</strong> Procedural scene automation and programmatic layout control.</p>
+                </div>
+
+                <!-- Core Features -->
+                <div class="details-group" style="margin-top: 30px;">
+                    <h3>Core Features</h3>
+                    <ul style="padding-left: 20px; line-height: 1.6;">
+                        <li><strong>Animation Drivers:</strong> Mathematical math expressions automate object spin and orbital paths without keyframes.</li>
+                        <li><strong>Procedural Asteroid Belt:</strong> 300 unique randomized meshes orbiting via customized sine/cosine math.</li>
+                        <li><strong>Path-Constrained Orbiter:</strong> Multi-segmented space shuttle bound to a 200-frame cyclic Bezier curve path.</li>
+                        <li><strong>Cinematic Camera Rig:</strong> Dynamic tracking empty adjusting focal lengths based on target velocity vectors.</li>
+                    </ul>
+                </div>
+
+                <!-- Animation Sequence -->
+                <div class="details-group" style="margin-top: 30px;">
+                    <h3>Animation Sequence</h3>
+                    <ul style="padding-left: 20px; line-height: 1.6;">
+                        <li><strong>Frames 1–50:</strong> System-wide establishing shot tracking orbital initialization.</li>
+                        <li><strong>Frames 51–150:</strong> Mid-sequence focus shift tracking the path-constrained shuttle vector.</li>
+                        <li><strong>Frames 151–200:</strong> Loop closure capturing camera rig alignment adjustments.</li>
+                    </ul>
+                </div>
+
+                <!-- Assets & Source Resources -->
+                <div class="details-group" style="margin-top: 30px;">
+                    <h3>Assets & Source Resources</h3>
+                    <p style="margin-bottom: 10px;">
+                        <strong>Surface Assets:</strong> High-definition wraps via the 
+                        <a href="https://www.solarsystemscope.com/textures/" target="_blank" style="color: #007bff; text-decoration: underline;">Solar System Textures</a>.
+                    </p>
+                    <p>
+                        <strong>Code Library:</strong> Operational scripts accessible via the 
+                        <a href="https://drive.google.com/drive/u/0/folders/1NtF-Q9m-Bq3Q4m59yJhThtKA81pSoUO6" target="_blank" style="color: #007bff; text-decoration: underline;">Python Script Compilation</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Tools & Technologies Section -->
     <section class="tools-section">
         <div class="container">
             <h2 class="section-title">Tools & Technologies</h2>
@@ -106,21 +170,21 @@
                         <i class="fas fa-cube"></i>
                     </div>
                     <h3>Blender</h3>
-                    <p>Complete 3D modeling, texturing, lighting, and rendering of all solar system components</p>
+                    <p>Core scene assembly, material application, environmental lighting, and rendering configuration for the solar system environment.</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-sphere"></i>
                     </div>
                     <h3>3D Modeling</h3>
-                    <p>Advanced modeling techniques including UV mapping, sculpting, and procedural generation</p>
+                    <p>Geometry layout, UV texture mapping for planetary bodies, and scripted procedural mesh distribution for environment assets.</p>
                 </div>
                 <div class="tool-card">
                     <div class="tool-icon">
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Python</h3>
-                    <p>Scripting for orbital mechanics, automation, animation keyframing, and rendering optimization</p>
+                    <p>Writing scripts for automated object distribution, configuring frame-driven math expressions for object rotation, and scene setup automation.</p>
                 </div>
             </div>
         </div>
@@ -152,6 +216,9 @@
                             <span class="data-unit">billion years</span>
                         </div>
                     </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> The star at the center of our solar system, the Sun generates light and heat through nuclear fusion and holds every planet in orbit with its immense gravity.
+                    </div>
                 </div>
                 <div class="video-card">
                     <h3>Mercury</h3>
@@ -179,6 +246,14 @@
                             <span class="data-value">57.9</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">0</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Mercury, the innermost planet of the Solar System, is distinguished by its rapid orbit, stark temperature extremes, and a heavily cratered surface shaped by ancient cosmic impacts.
                     </div>
                 </div>
                 <div class="video-card">
@@ -207,6 +282,14 @@
                             <span class="data-value">108.2</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">0</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Often called Earth's "sister planet" for its similar size, Venus is the hottest planet in the solar system due to its thick, toxic atmosphere that traps heat.
                     </div>
                 </div>
                 <div class="video-card">
@@ -235,6 +318,14 @@
                             <span class="data-value">149.6</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">1</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Our home planet and the only known world to support life, Earth is defined by vast oceans, a protective atmosphere, and a single natural satellite, the Moon.
                     </div>
                 </div>
                 <div class="video-card">
@@ -263,6 +354,14 @@
                             <span class="data-value">227.9</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">2</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Known as the "Red Planet" for its iron oxide-rich surface, Mars is home to Olympus Mons and Valles Marineris, the largest volcano and canyon in the solar system.
                     </div>
                 </div>
                 <div class="video-card">
@@ -291,6 +390,14 @@
                             <span class="data-value">778.5</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">97</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> The largest planet in the solar system, Jupiter is a gas giant famous for its Great Red Spot, a giant storm, and a vast system of dozens of moons.
                     </div>
                 </div>
                 <div class="video-card">
@@ -319,6 +426,14 @@
                             <span class="data-value">1434.0</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">274</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Instantly recognizable for its stunning ring system of ice and rock, Saturn is a low-density gas giant and the second-largest planet in the solar system.
                     </div>
                 </div>
                 <div class="video-card">
@@ -347,6 +462,14 @@
                             <span class="data-value">2873.0</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">29</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> An ice giant that rotates almost completely on its side, Uranus has a pale blue-green hue and experiences extreme seasons over its 84-year orbit.
                     </div>
                 </div>
                 <div class="video-card">
@@ -375,6 +498,14 @@
                             <span class="data-value">4495.1</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">16</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> The farthest known planet from the Sun, Neptune is a deep blue ice giant known for hosting the fastest winds recorded anywhere in the solar system.
                     </div>
                 </div>
                 <div class="video-card">
@@ -403,6 +534,14 @@
                             <span class="data-value">5906</span>
                             <span class="data-unit">million km</span>
                         </div>
+                        <div class="data-row">
+                            <span class="data-label">Number of moons:</span>
+                            <span class="data-value">4</span>
+                            <span class="data-unit">moons</span>
+                        </div>
+                    </div>
+                    <div class="planet-description">
+                        <strong>Description:</strong> Once considered the ninth planet, this dwarf planet resides in the icy Kuiper Belt at the edge of the solar system, orbited by its largest moon, Charon.
                     </div>
                 </div>
             </div>
@@ -428,7 +567,6 @@
                 </a>
             </div>
         </div>
-
     </section>
 
     <!-- Footer -->
